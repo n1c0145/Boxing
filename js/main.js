@@ -47,28 +47,3 @@ var data = [
 ];
 
 
-
-
-function login() {
-   
-    var user = document.getElementById("user").value;
-var password = document.getElementById("password").value;
-
-
-     result = JSON.stringify(data); 
-
-       for (var key in data) {
-
-
-          if (user === data[key]['user']) {
-              if (password === result[key]['password']) {
-                  alert("ok")
-              }
-          }
-      }
-}
-
-
-
-
-
