@@ -46,4 +46,43 @@ var data = [
     }
 ];
 
+let alert = document.getElementById('alerta');
+
+function login() {
+
+    var user = document.getElementById("user").value;
+    var password = document.getElementById("password").value;
+
+
+    for (let key in data) {
+
+        if (data[key].user == user) {
+            if (data[key].password == password) {
+
+                window.location = "table.html"
+
+            } 
+            
+
+        }
+        
+    }
+
+    
+    alerta()
+
+}
+
+
+function alerta() {
+    alert.innerHTML = `
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Datos Incorrectos</strong>
+</div>
+  `;
+}
+
+
+
+
 
