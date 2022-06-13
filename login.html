@@ -16,22 +16,23 @@
     <form>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Usuario</label>
-            <input type="text" required class="form-control" id="user" name="user" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" required class="form-control" id="password" name="password">
+            <input type="password" class="form-control" id="password" name="password">
         </div>
-
+      
     </form>
 
-    <button class="btn btn-primary" onclick="login()">Submit</button>
+    <button class="btn btn-primary" type="submit" value="Submit" onclick="submit()">Submit</button>
+     
 
 
     <div id="alerta"></div>
 
-    <!-- script -->
-    <script src="../boxing/js/main.js"></script>
+  
+    <script src="/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
         crossorigin="anonymous"></script>

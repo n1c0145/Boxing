@@ -1,78 +1,41 @@
-var data = [
-    {
-        user: "nico",
-        password: "12345",
-        userData: {
 
-            nombre: "Nicolas",
-            apellido: "Loza",
-            ci: 1719088161,
-            telefono: 0998790522,
-            correo: "nicolas.lozalml@gmail.com",
-            direccion: "Tumbaco"
+//login
 
-        }
+function submit(){
 
-    },
-    {
-        user: "juan",
-        password: "12345",
-        userData: {
+    fetch('usuarios.json')
+        .then(res => res.json())
+        .then(datos => {
+            login(datos)
+        })
+}
 
-            nombre: "Juan",
-            apellido: "Perez",
-            ci: 1756845725,
-            telefono: 096738773,
-            correo: "jaunp@gmail.com",
-            direccion: "Cumbaya"
-
-        }
-
-    },
-    {
-        user: "diego",
-        password: "12345",
-        userData: {
-
-            nombre: "Diego",
-            apellido: "Yanez",
-            ci: 1789466862,
-            telefono: 0997846882,
-            correo: "diegoyanez@gmail.com",
-            direccion: "Pifo"
-
-        }
-
-    }
-];
 
 let alert = document.getElementById('alerta');
 
-function login() {
-
+function login(datos) {
     var user = document.getElementById("user").value;
-    var password = document.getElementById("password").value;
+var password = document.getElementById("password").value;
 
 
-    for (let key in data) {
+for (let key in datos) {
 
-        if (data[key].user == user) {
-            if (data[key].password == password) {
+    if (datos[key].user == user) {
+        if (datos[key].password == password) {
 
-                window.location = "table.html"
+            window.location = "table.html"
 
-            } 
-            
-
-        }
+        } 
         
+
     }
-
     
-    alerta()
-
 }
 
+
+alerta()
+
+}
 
 function alerta() {
     alert.innerHTML = `
@@ -84,5 +47,34 @@ function alerta() {
 
 
 
+//table
+
+var contenido = document.querySelector('#contenido')
 
 
+fetch('usuarios.json')
+    .then(res => res.json())
+    .then(datos => {
+
+        tabla(datos)
+    })
+
+
+function tabla(datos) {
+    contenido.innerHTML = ''
+    for (let valor of datos) {
+        contenido.innerHTML += `
+                
+                <tr>
+                    <td scope="row">${valor.user}</td>
+                    <td>${valor.password}</td>
+                    <td>${valor.userData.nombre}</td>
+                    <td>${valor.userData.apellido}</td>
+                    <td>${valor.userData.ci}</td>
+                    <td>${valor.userData.correo}</td>
+                    <td>${valor.userData.direccion}</td>
+                </tr>
+                
+                `
+    }
+}
