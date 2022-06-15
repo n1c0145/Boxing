@@ -2,104 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- alertify CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- alertify CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <link rel="stylesheet" href="./css/table.css">
+  <title>Document</title>
 </head>
+
 <body>
 
 
-    <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">        
-        <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modalArticulo">Crear</button>
-        <table id="tablaArticulos" class="table mt-2 table-bordered table-striped">
-            <thead>
-                <tr class="text-center">
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Cedula</th>
-                    <th>Telefono</th>
-                    <th>Correo</th>
-                    <th>Direccion</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>                
-            </tbody>
-        </table>
-    </div>
+  <div class="container mt-5 shadow-lg p-3 mb-5 bg-body rounded table-responsive text-center">
+    <button id="btnCrear" type="button" class="button " data-bs-toggle="modal" data-bs-target="#modalArticulo">Insertar
+      Usuario<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+        class="bi bi-person-plus-fill ms-2" viewBox="0 0 16 16">
+        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        <path fill-rule="evenodd"
+          d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+      </svg></button>
+    <table id="tablaArticulos" class="table mt-3 table-bordered table-striped">
+      <thead>
+        <tr class="text-center">
+          <th>Usuario</th>
+          <th>Contraseña</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Cedula</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+          <th>Direccion</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="fst-italic">
+      </tbody>
+    </table>
+  </div>
 
-    <div id="modalArticulo" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-              <h5 class="modal-title" id="exampleModalLabel">Usuarios</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="usuario" class="col-form-label">Usuario:</label>
-                  <input id="usuario" type="text" class="form-control" autofocus>
-                </div>
-                <div class="mb-3">
-                  <label for="contraseña" class="col-form-label">Contraseña</label>
-                  <input id="contraseña" type="password" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="col-form-label">Nombre</label>
-                    <input id="nombre" type="text" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label for="apellido" class="col-form-label">Apellido</label>
-                    <input id="apellido" type="text" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label for="cedula" class="col-form-label">Cedula</label>
-                    <input id="cedula" type="number" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label for="telefono" class="col-form-label">Telefono</label>
-                    <input id="telefono" type="number" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label for="correo" class="col-form-label">Correo</label>
-                    <input id="correo" type="text" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label for="direccion" class="col-form-label">Direccion</label>
-                    <input id="direccion" type="text" class="form-control">
-                  </div>    
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Guardar</button>
-            </div>
-          </form>
-          </div>
+  <div id="modalArticulo" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Usuarios</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="usuario" class="col-form-label">Usuario:</label>
+              <input id="usuario" type="text" class="form-control" autofocus>
+            </div>
+            <div class="mb-3">
+              <label for="contraseña" class="col-form-label">Contraseña</label>
+              <input id="contraseña" type="password" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="col-form-label">Nombre</label>
+              <input id="nombre" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="apellido" class="col-form-label">Apellido</label>
+              <input id="apellido" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="cedula" class="col-form-label">Cedula</label>
+              <input id="cedula" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="col-form-label">Telefono</label>
+              <input id="telefono" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="col-form-label">Correo</label>
+              <input id="correo" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="col-form-label">Direccion</label>
+              <input id="direccion" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+        </form>
       </div>
+    </div>
+  </div>
 
 
-    <!-- script -->
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-        crossorigin="anonymous"></script>
+  <!-- script -->
 
-        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-        <script src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

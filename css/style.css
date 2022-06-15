@@ -2,7 +2,7 @@ header {
     background-image: url(../assets/fondo1.png);
     background-size: cover;
     height: 70vh;
-    position: relative;
+     position: relative; 
 }
 
 
@@ -22,9 +22,19 @@ header {
 .title {
     color: #00438c;
     font-size: 3.5rem;
-    position: absolute;
-    top: 30%;
-    transform: translateX(3%);
+     position: absolute; 
+    /* top: 30%; */
+      /* transform: translateX(0%);   */
+}
+
+
+@media(max-width:500px) {
+    .title {
+        color: #00438c;
+        font-size: 2.5rem;
+         position: absolute; 
+          /* transform: translateX(0%);   */
+    }
 }
 
 .logo {
@@ -36,9 +46,9 @@ header {
 
 }
 
-.row {
+ .row {
     margin: 0 0 0 0;
-}
+} 
 
 #row-cursos img {
     border-radius: 50%;
@@ -57,7 +67,7 @@ header {
 
 #row-nosotros img {
     border-radius: 50%;
-    width: 400px;
+      width: 60%;  
 }
 
 #row-datos {
