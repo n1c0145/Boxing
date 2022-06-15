@@ -1,0 +1,12 @@
+.button{
+    background-color: rgb(68, 90, 255);
+    font-size: 1.2rem;
+    width: 220px;
+    height: 40px;
+    border: none;
+    font-weight: bolder;
+}
+
+body{
+    background-color: rgb(225, 225, 225);
+}
